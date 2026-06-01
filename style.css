@@ -761,6 +761,18 @@ textarea {
   height: auto;
   display: block;
   margin-bottom: 16px;
+
+}
+
+.footer-credit {
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 14px;
+}
+
+
+.footer-credit a:hover {
+  text-decoration: underline;
 }
 
 /* ================================
