@@ -770,7 +770,8 @@ img {
 }
 
 .photo-card .media-box {
-  min-height: 260px;
+  min-height: 300px;
+  width: 100%;
 }
 
 .photo-card .card-body {
@@ -899,7 +900,7 @@ textarea {
   border: 1px solid rgba(255,255,255,0.12);
   background: rgba(3, 6, 5, 0.88);
   min-height: 330px;
-  padding: 34px;
+   padding: 18px 22px;
   overflow: hidden;
   transition: 0.3s ease;
 }
@@ -923,8 +924,10 @@ textarea {
 }
 
 .approach-body {
-  position: relative;
-  z-index: 2;
+  padding: 44px 42px 42px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .approach-number {
@@ -949,7 +952,7 @@ textarea {
   font-size: 18px;
   line-height: 1.75;
   margin: 0;
-  max-width: 360px;
+  max-width: 700px;
 }
 
 .approach-media {
@@ -1073,6 +1076,8 @@ textarea {
     font-size: 34px;
   }
 }
+
+
 /* ================================
    Footer
 ================================ */
