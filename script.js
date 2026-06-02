@@ -50,7 +50,9 @@ if (lightbox) {
 }
 
 // Petit effet au scroll sur les cartes
-const revealItems = document.querySelectorAll('.card, .partner, .social-link, .info-card, .feature-block');
+const revealItems = document.querySelectorAll(
+  '.partner, .social-link, .info-card, .feature-block, .story-block, .mission-block'
+);
 
 const observer = new IntersectionObserver(
   (entries) => {
