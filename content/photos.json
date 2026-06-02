@@ -1,0 +1,28 @@
+{
+  "photos": [
+    {
+      "title": "Match de soirée",
+      "team": "Laval SC",
+      "image": "images/uploads/photo-1.jpg",
+      "theme": "red"
+    },
+    {
+      "title": "Action terrain",
+      "team": "CS Saint-Laurent",
+      "image": "images/uploads/photo-2.jpg",
+      "theme": "blue"
+    },
+    {
+      "title": "Célébration",
+      "team": "AS Blainville",
+      "image": "images/uploads/photo-3.jpg",
+      "theme": "green"
+    },
+    {
+      "title": "Avant-match",
+      "team": "FC Longueuil",
+      "image": "images/uploads/photo-4.jpg",
+      "theme": "gray"
+    }
+  ]
+}

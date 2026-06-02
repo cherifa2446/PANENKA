@@ -1,1 +1,0 @@
-Header/Footer are repeated in every HTML file for easy static hosting.

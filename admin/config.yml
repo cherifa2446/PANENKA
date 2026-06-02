@@ -1,0 +1,32 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "images/uploads"
+
+collections:
+  - name: "settings"
+    label: "Contenu du site"
+    files:
+      - name: "photos"
+        label: "Nos photos"
+        file: "content/photos.json"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.team}}"
+            fields:
+              - { label: "Titre de la photo", name: "title", widget: "string" }
+              - { label: "Équipe / texte en dessous", name: "team", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "Couleur de secours"
+                name: "theme"
+                widget: "select"
+                required: false
+                options:
+                  - { label: "Rouge", value: "red" }
+                  - { label: "Bleu", value: "blue" }
+                  - { label: "Vert", value: "green" }
+                  - { label: "Gris", value: "gray" }

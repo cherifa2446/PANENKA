@@ -4,101 +4,158 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nos photos | Panenka</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <header class="site-header">
+  <header class="site-header">
     <nav class="navbar">
-      <a class="logo" href="index.html"> <img src="images/PANENKALOGO.jpg" alt="Logo Panenka"></a>
+      <a class="logo" href="index.html">
+        <img src="images/PANENKALOGO.jpg" alt="Logo Panenka">
+      </a>
+
       <ul class="nav-links">
-        <li><a  href="index.html">Accueil</a></li>
+        <li><a href="index.html">Accueil</a></li>
         <li><a href="notre-travail.html">Notre travail</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a class="active" href="photos.html">Nos photos</a></li>
         <li><a href="contact.html">Contactez-nous</a></li>
       </ul>
-     <div class="nav-actions">
-            <a class="btn btn-primary"
-             href="https://drive.google.com/uc?export=download&id=1w2mI6xVPTK4-HIua_pIYw9pU5DYYVP40">
-             Media Kit
-             </a>
 
-             <button class="menu-toggle" aria-label="Ouvrir le menu">
-             <span></span><span></span><span></span>
-             </button>
+      <div class="nav-actions">
+        <a class="btn btn-primary"
+           href="https://drive.google.com/uc?export=download&id=1w2mI6xVPTK4-HIua_pIYw9pU5DYYVP40">
+          Media Kit
+        </a>
+
+        <button class="menu-toggle" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="page-hero"><div class="container"><h1 class="page-title">Nos photos</h1><p class="page-intro">Une galerie sombre et moderne, inspirée des cartes visuelles Panenka. Clique sur une photo pour l'agrandir dans une lightbox.</p></div></section>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-title">Nos photos</h1>
+        <p class="page-intro">
+          Une galerie sombre et moderne, inspirée des cartes visuelles Panenka.
+          Clique sur une photo pour l'agrandir dans une lightbox.
+        </p>
+      </div>
+    </section>
 
     <section class="section">
       <div class="container">
-        <div class="section-head"><h2>Galerie photo</h2><a class="view-all" href="contact.html">Réserver une couverture</a></div>
-        <div class="grid-4">
-          <article class="card photo-card" data-lightbox data-theme="red"><div class="media-box red"></div><div class="card-body"><h3 class="card-title">Match de soirée</h3><p class="card-subtitle">Laval SC</p></div></article>
-          <article class="card photo-card" data-lightbox data-theme="blue"><div class="media-box blue"></div><div class="card-body"><h3 class="card-title">Action terrain</h3><p class="card-subtitle">CS Saint-Laurent</p></div></article>
-          <article class="card photo-card" data-lightbox data-theme="green"><div class="media-box green"></div><div class="card-body"><h3 class="card-title">Célébration</h3><p class="card-subtitle">AS Blainville</p></div></article>
-          <article class="card photo-card" data-lightbox data-theme="gray"><div class="media-box gray"></div><div class="card-body"><h3 class="card-title">Avant-match</h3><p class="card-subtitle">FC Longueuil</p></div></article>
-          <article class="card photo-card" data-lightbox data-theme="blue"><div class="media-box blue"></div><div class="card-body"><h3 class="card-title">Duel offensif</h3><p class="card-subtitle">Tournoi local</p></div></article>
-          <article class="card photo-card" data-lightbox data-theme="red"><div class="media-box red"></div><div class="card-body"><h3 class="card-title">Finale</h3><p class="card-subtitle">Coupe du Québec</p></div></article>
-          <article class="card photo-card" data-lightbox data-theme="green"><div class="media-box green"></div><div class="card-body"><h3 class="card-title">Supporters</h3><p class="card-subtitle">Communauté</p></div></article>
-          <article class="card photo-card" data-lightbox data-theme="gray"><div class="media-box gray"></div><div class="card-body"><h3 class="card-title">Coulisses</h3><p class="card-subtitle">Création de contenu</p></div></article>
+        <div class="section-head">
+          <h2>Galerie photo</h2>
+          <a class="view-all" href="contact.html">Réserver une couverture</a>
         </div>
+
+        <!-- Les photos vont être ajoutées automatiquement ici avec Decap CMS -->
+        <div class="grid-4" id="photoGrid"></div>
       </div>
     </section>
   </main>
 
-  <div class="lightbox" aria-hidden="true"><button class="lightbox-close" aria-label="Fermer">×</button><div class="lightbox-content"></div></div>
+  <div class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="Fermer">×</button>
+    <div class="lightbox-content"></div>
+  </div>
 
   <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
+    <div class="container">
+      <div class="footer-grid">
 
-      <div>
-        <a class="footer-logo" href="index.html">
-          <img src="images/PANENKALOGO.jpg" alt="Logo Panenka">
-        </a>
+        <div>
+          <a class="footer-logo" href="index.html">
+            <img src="images/PANENKALOGO.jpg" alt="Logo Panenka">
+          </a>
+
           <p class="footer-credit">
-        Site créé par 
-       <a href="https://cwdevagency.ca/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnO5QgvfwF7itM9Wv4wfVszN73BDyKEVAaL8e4JDXiYLQ4rY_DP4rI9IKzG6w_aem_079jFx0LtiwBTPETZEJS5w" target="_blank">
-        CWDEV
-    </a>
-        </p>
-      </div>
-
-      <div>
-        <h4>Navigation</h4>
-        <div class="footer-links">
-          <a href="notre-travail.html">Notre travail</a>
-          <a href="blog.html">Blog</a>
-          <a href="photos.html">Nos photos</a>
-          <a href="contact.html">Contact</a>
+            Site créé par
+            <a href="https://cwdevagency.ca/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnO5QgvfwF7itM9Wv4wfVszN73BDyKEVAaL8e4JDXiYLQ4rY_DP4rI9IKzG6w_aem_079jFx0LtiwBTPETZEJS5w"
+               target="_blank">
+              CWDEV
+            </a>
+          </p>
         </div>
-      </div>
 
-      <div>
-        <h4>Réseaux</h4>
-        <div class="footer-links">
-          <a href="https://www.instagram.com/panenka.ftbl/" target="_blank">Instagram</a>
-          <a href="https://www.linkedin.com/company/panenka-ftbl/posts/?feedView=all" target="_blank">LinkedIn</a>
-          <a href="#" target="_blank">YouTube</a>
-          <a href="https://www.facebook.com/profile.php/?id=61565873008838" target="_blank">Facebook</a>
+        <div>
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="notre-travail.html">Notre travail</a>
+            <a href="blog.html">Blog</a>
+            <a href="photos.html">Nos photos</a>
+            <a href="contact.html">Contact</a>
+          </div>
         </div>
+
+        <div>
+          <h4>Réseaux</h4>
+          <div class="footer-links">
+            <a href="https://www.instagram.com/panenka.ftbl/" target="_blank">Instagram</a>
+            <a href="https://www.linkedin.com/company/panenka-ftbl/posts/?feedView=all" target="_blank">LinkedIn</a>
+            <a href="#" target="_blank">YouTube</a>
+            <a href="https://www.facebook.com/profile.php/?id=61565873008838" target="_blank">Facebook</a>
+          </div>
+        </div>
+
       </div>
 
+      <div class="footer-bottom">
+        <span>© 2026 Panenka. Tous droits réservés.</span>
+        <span>Football québécois · Création de contenu · Communauté</span>
+      </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <span>© 2026 Panenka. Tous droits réservés.</span>
-      <span>Football québécois · Création de contenu · Communauté</span>
-    </div>
-  </div>
-</footer>
+  <!-- Script pour afficher les photos venant de content/photos.json -->
+  <script>
+    fetch("content/photos.json")
+      .then(response => response.json())
+      .then(data => {
+        const photoGrid = document.getElementById("photoGrid");
+
+        if (!data.photos || data.photos.length === 0) {
+          photoGrid.innerHTML = "<p>Aucune photo pour le moment.</p>";
+          return;
+        }
+
+        data.photos.forEach(photo => {
+          const card = document.createElement("article");
+
+          card.className = "card photo-card";
+          card.setAttribute("data-lightbox", "");
+          card.setAttribute("data-theme", photo.theme || "gray");
+
+          card.innerHTML = `
+            <div class="media-box custom-photo" style="background-image: url('${photo.image}')"></div>
+            <div class="card-body">
+              <h3 class="card-title">${photo.title}</h3>
+              <p class="card-subtitle">${photo.team}</p>
+            </div>
+          `;
+
+          photoGrid.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error("Erreur lors du chargement des photos :", error);
+
+        const photoGrid = document.getElementById("photoGrid");
+        photoGrid.innerHTML = "<p>Impossible de charger les photos pour le moment.</p>";
+      });
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
