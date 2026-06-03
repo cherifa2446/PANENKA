@@ -23,6 +23,12 @@
       "team": "FC Longueuil",
       "image": "images/uploads/photo-4.jpg",
       "theme": "gray"
+    },
+    {
+      "title": "test 2 ",
+      "team": "test 2 ",
+      "image": "images/uploads/capture-d’écran-2025-10-16-142251.png",
+      "theme": "red"
     }
   ]
 }
