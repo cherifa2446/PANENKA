@@ -1656,3 +1656,391 @@ textarea {
 .media-box {
   position: relative;
 }
+
+@media (max-width: 520px) {
+  .navbar {
+    height: 120px;
+    width: 100%;
+    padding: 0 28px;
+  }
+
+  .logo img {
+    height: 48px;
+  }
+
+  .menu-toggle {
+    width: 58px;
+    height: 58px;
+  }
+
+  .hero {
+    overflow: hidden;
+  }
+
+  .hero-inner {
+    width: 100%;
+    padding: 58px 18px 55px;
+  }
+
+  .hero-copy {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .hero-title {
+    font-size: 40px;
+    line-height: 0.92;
+    letter-spacing: -1px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    line-height: 1.4;
+  }
+
+  .hero-text {
+    font-size: 17px;
+    line-height: 1.55;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .hero-buttons {
+    margin-top: 34px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    min-height: 58px;
+    font-size: 12px;
+    letter-spacing: 2.5px;
+  }
+
+  .hero-stats {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .stat-number {
+    font-size: 34px;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .hero-field {
+    right: -95px;
+    bottom: 185px;
+    width: 260px;
+    height: 260px;
+    left: auto;
+    opacity: 0.28;
+  }
+}
+/* ================================
+   PATCH MOBILE PREMIUM — v2
+   Fixes: navbar, hero stats, footer,
+   menu overlay, spacing
+================================ */
+
+/* --- Navbar mobile propre --- */
+@media (max-width: 1050px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+  }
+
+  .navbar {
+    height: 72px !important;
+    width: 100% !important;
+    padding: 0 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    height: 52px !important;
+    width: auto;
+  }
+
+  .nav-actions {
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 0;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 44px !important;
+    height: 44px !important;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.04);
+    flex-shrink: 0;
+  }
+
+  /* Menu overlay — par-dessus TOUT, y compris le footer */
+  .nav-links {
+    position: fixed !important;
+    top: 72px !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: calc(100dvh - 72px) !important;
+    background: rgba(2, 4, 3, 0.98) !important;
+    border-left: none !important;
+    box-shadow: none !important;
+    z-index: 9998 !important;
+    padding: 32px 28px 48px !important;
+    display: flex !important;
+    flex-direction: column;
+    gap: 0 !important;
+    overflow-y: auto;
+    backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(242, 224, 78, 0.15) !important;
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 20px 0 !important;
+    font-size: 15px !important;
+    letter-spacing: 5px;
+    color: rgba(255,255,255,0.75) !important;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--green) !important;
+  }
+
+  /* Bouton Media Kit visible dans le menu mobile */
+  .nav-links-mobile-cta {
+    margin-top: 36px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(242,224,78,0.18);
+  }
+}
+
+/* --- Hero stats en grille 3 colonnes sur mobile --- */
+@media (max-width: 760px) {
+  .hero-stats {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0 !important;
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stats > div {
+    text-align: center;
+    padding: 0 8px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .hero-stats > div:last-child {
+    border-right: none;
+  }
+
+  .stat-number {
+    font-size: 22px !important;
+    display: block;
+    color: var(--green);
+    font-weight: 950;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 9px !important;
+    letter-spacing: 2px !important;
+    margin-top: 6px !important;
+    display: block;
+    color: rgba(255,255,255,0.5);
+  }
+}
+
+/* --- Hero buttons compacts --- */
+@media (max-width: 760px) {
+  .hero-inner {
+    padding: 44px 0 48px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: row !important;
+    gap: 10px !important;
+  }
+
+  .hero-buttons .btn {
+    width: auto !important;
+    flex: 1;
+    min-height: 50px !important;
+    padding: 0 16px !important;
+    font-size: 11px !important;
+    letter-spacing: 2px !important;
+  }
+}
+
+/* --- Footer premium sur mobile --- */
+@media (max-width: 760px) {
+  .footer-logo img {
+    width: 56px !important;
+    height: auto !important;
+    margin-bottom: 10px;
+  }
+
+  .site-footer {
+    padding: 40px 0 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 20px !important;
+  }
+
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .footer-grid > div:first-child .footer-logo {
+    margin: 0;
+  }
+
+  .footer-grid > div:first-child .footer-logo img {
+    margin: 0;
+  }
+
+  .footer-credit {
+    font-size: 13px !important;
+    color: rgba(255,255,255,0.5) !important;
+    margin-top: 0 !important;
+  }
+
+  .footer-grid h4 {
+    margin-bottom: 12px;
+    color: rgba(255,255,255,0.45);
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .footer-links {
+    gap: 12px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+    padding-top: 18px;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+/* --- Supprime les conflits 520px précédents --- */
+@media (max-width: 520px) {
+  .navbar {
+    height: 72px !important;
+    width: 100% !important;
+    padding: 0 16px !important;
+  }
+
+  .logo img {
+    height: 48px !important;
+  }
+
+  .hero-inner {
+    padding: 40px 0 44px !important;
+    width: calc(100% - 32px) !important;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 16vw, 52px) !important;
+    line-height: 0.9 !important;
+  }
+
+  .hero-subtitle {
+    font-size: 11px !important;
+    letter-spacing: 2.5px !important;
+    margin-top: 14px;
+  }
+
+  .hero-text {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+    margin-top: 16px;
+  }
+
+  .hero-buttons {
+    margin-top: 26px !important;
+    gap: 8px !important;
+  }
+
+  .hero-buttons .btn {
+    min-height: 48px !important;
+    font-size: 10px !important;
+    letter-spacing: 2px !important;
+  }
+}
+
+/* --- Overlay backdrop quand menu ouvert --- */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9990;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+}
+
+.nav-overlay.active {
+  display: block;
+}
+
+/* --- Hamburger animé --- */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.menu-toggle span {
+  transition: transform 0.22s ease, opacity 0.18s ease;
+}
+
+/* Overflow horizontal global fix */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
