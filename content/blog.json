@@ -1,3 +1,12 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "title": "Match de Laval ",
+      "date": "2026-06-10T15:02:00.000-04:00",
+      "excerpt": "Retour sur un match intense où les deux équipes ont offert un gros spectacle du début à la fin. Entre occasions ratées, arrêts importants et ambiance de terrain, ce duel avait tout d’un vrai choc local.",
+      "content": "Le soccer québécois continue de nous offrir des matchs remplis d’intensité, et cette rencontre en est un parfait exemple.\n\n\n\nDès les premières minutes, les deux équipes ont imposé un rythme élevé. Les duels étaient engagés, les transitions rapides et chaque possession pouvait créer le danger.\n\n\n\nLe premier moment fort est arrivé en première mi-temps, avec une occasion nette repoussée par le gardien. Un arrêt important qui a permis à son équipe de rester dans le match.\n\n\n\nEn deuxième période, le rythme n’a pas diminué. Les joueurs ont continué à pousser, portés par l’énergie du terrain et l’ambiance autour du match.\n\n\n\nAu final, cette rencontre rappelle pourquoi le soccer local mérite plus de visibilité : des joueurs investis, des histoires fortes et une passion qui se vit directement sur le terrain.",
+      "slug": "un-duel-intense-sur-le-terrain-local",
+      "image": "/images/uploads/photo-1.jpg"
+    }
+  ]
 }
