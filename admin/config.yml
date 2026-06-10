@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "images/uploads"
-public_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "settings"
@@ -18,15 +18,69 @@ collections:
             widget: "list"
             summary: "{{fields.title}} - {{fields.team}}"
             fields:
-              - { label: "Titre de la photo", name: "title", widget: "string" }
-              - { label: "Équipe / texte en dessous", name: "team", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
+              - label: "Titre de la photo"
+                name: "title"
+                widget: "string"
+
+              - label: "Équipe / texte en dessous"
+                name: "team"
+                widget: "string"
+
+              - label: "Image"
+                name: "image"
+                widget: "image"
+
               - label: "Couleur de secours"
                 name: "theme"
                 widget: "select"
                 required: false
                 options:
-                  - { label: "Rouge", value: "red" }
-                  - { label: "Bleu", value: "blue" }
-                  - { label: "Vert", value: "green" }
-                  - { label: "Gris", value: "gray" }
+                  - label: "Rouge"
+                    value: "red"
+                  - label: "Bleu"
+                    value: "blue"
+                  - label: "Vert"
+                    value: "green"
+                  - label: "Gris"
+                    value: "gray"
+
+      - name: "blog"
+        label: "Blog"
+        file: "content/blog.json"
+        fields:
+          - label: "Articles"
+            name: "articles"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Titre de l'article"
+                name: "title"
+                widget: "string"
+
+              - label: "Lien de l'article"
+                name: "slug"
+                widget: "string"
+                hint: "Exemple : premier-article-panenka. Mets seulement des lettres minuscules, des chiffres et des tirets."
+
+              - label: "Catégorie"
+                name: "category"
+                widget: "string"
+                required: false
+
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                required: false
+
+              - label: "Image principale"
+                name: "image"
+                widget: "image"
+                required: false
+
+              - label: "Résumé"
+                name: "excerpt"
+                widget: "text"
+
+              - label: "Contenu complet"
+                name: "content"
+                widget: "markdown"

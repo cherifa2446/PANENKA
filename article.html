@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Blog | Panenka</title>
+  <title>Article | Panenka</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,24 +42,15 @@
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container">
-        <h1 class="page-title">Blog</h1>
-        <p class="page-intro">
-          Retours de matchs, portraits, moments forts et histoires du terrain
-        </p>
-      </div>
-    </section>
+    <section class="section article-section">
+      <div class="container article-container">
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Derniers articles</h2>
+        <a href="blog.html" class="back-link">← Retour au blog</a>
+
+        <div id="article-content">
+          <p>Chargement de l’article...</p>
         </div>
 
-        <div id="blog-grid" class="grid-3">
-          <p>Chargement des articles...</p>
-        </div>
       </div>
     </section>
   </main>
@@ -111,58 +102,51 @@
   </footer>
 
   <script>
-    const blogGrid = document.getElementById("blog-grid");
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("id");
+    const articleContent = document.getElementById("article-content");
 
     fetch("content/blog.json")
       .then(response => response.json())
       .then(data => {
-        blogGrid.innerHTML = "";
+        const article = data.articles.find(item => item.slug === slug);
 
-        if (!data.articles || data.articles.length === 0) {
-          blogGrid.innerHTML = "<p>Aucun article pour le moment.</p>";
+        if (!article) {
+          articleContent.innerHTML = `
+            <h1 class="article-title">Article introuvable</h1>
+            <p class="article-body">Cet article n’existe pas ou a été supprimé.</p>
+          `;
           return;
         }
 
-        data.articles.forEach(article => {
-          const card = document.createElement("article");
-          card.className = "card blog-card";
+        document.title = article.title + " | Panenka";
 
-          const dateText = article.date
-            ? new Date(article.date).toLocaleDateString("fr-CA", {
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-              })
-            : "";
+        const dateText = article.date
+          ? new Date(article.date).toLocaleDateString("fr-CA", {
+              day: "numeric",
+              month: "long",
+              year: "numeric"
+            })
+          : "";
 
-          card.innerHTML = `
-            ${article.image 
-              ? `<img class="blog-image" src="${article.image}" alt="${article.title}">` 
-              : `<div class="media-box gray"></div>`
-            }
+        articleContent.innerHTML = `
+          <p class="card-meta">
+            ${article.category ? article.category : "Article"}
+            ${dateText ? " · " + dateText : ""}
+          </p>
 
-            <div class="card-body">
-              <p class="card-meta">
-                ${article.category ? article.category : "Article"}
-                ${dateText ? " · " + dateText : ""}
-              </p>
+          <h1 class="article-title">${article.title}</h1>
 
-              <h3 class="card-title">${article.title}</h3>
+          ${article.image ? `<img src="${article.image}" alt="${article.title}" class="article-hero">` : ""}
 
-              <p class="card-text">${article.excerpt}</p>
-
-              <a class="btn btn-outline" href="article.html?id=${article.slug}">
-                Lire plus
-              </a>
-            </div>
-          `;
-
-          blogGrid.appendChild(card);
-        });
+          <div class="article-body">
+            ${article.content ? article.content : ""}
+          </div>
+        `;
       })
       .catch(error => {
-        console.error("Erreur blog:", error);
-        blogGrid.innerHTML = "<p>Impossible de charger les articles pour le moment.</p>";
+        console.error("Erreur article:", error);
+        articleContent.innerHTML = "<p>Impossible de charger l’article.</p>";
       });
   </script>
 
