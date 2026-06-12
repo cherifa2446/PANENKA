@@ -76,26 +76,78 @@ if (lightbox) {
   });
 }
 
-// Effet scroll sur les cartes
-const revealItems = document.querySelectorAll(
-  '.partner, .social-link, .info-card, .feature-block, .story-block, .mission-block'
-);
+// ================================
+// Effet scroll global sur toutes les pages
+// ================================
 
-const observer = new IntersectionObserver(
+const revealSelectors = `
+  .page-title,
+  .page-intro,
+  .section-head,
+  .section-head h2,
+  .section-subtitle,
+  .feature-block,
+  .feature-content,
+  .feature-content h2,
+  .card,
+  .blog-card,
+  .photo-card,
+  .partner,
+  .partner strong,
+  .social-link,
+  .info-card,
+  .story-block,
+  .story-block h2,
+  .story-block p,
+  .mission-block,
+  .mission-block h2,
+  .mission-block p,
+  .mission-block li,
+  .approach-card,
+  .approach-card h3,
+  .panenka-quote,
+  .contact-form,
+  .contact-side,
+  .contact-side h2,
+  .article-title,
+  .article-hero,
+  .article-body,
+  .footer-grid,
+  .footer-bottom
+`;
+
+const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
+        entry.target.classList.add("reveal-visible");
       }
     });
   },
   { threshold: 0.12 }
 );
 
-revealItems.forEach((item) => {
-  item.style.opacity = '0';
-  item.style.transform = 'translateY(14px)';
-  item.style.transition = 'opacity 0.45s ease, transform 0.45s ease, border-color 0.25s ease';
-  observer.observe(item);
+function initRevealAnimations(scope = document) {
+  const items = scope.querySelectorAll(revealSelectors);
+
+  items.forEach((item) => {
+    if (item.classList.contains("reveal-item")) return;
+
+    item.classList.add("reveal-item");
+    revealObserver.observe(item);
+  });
+}
+
+// Lance l’animation sur les éléments déjà présents
+initRevealAnimations();
+
+// Relance automatiquement quand du contenu est ajouté avec fetch()
+// Exemple : blog, photos, article
+const revealMutationObserver = new MutationObserver(() => {
+  initRevealAnimations();
+});
+
+revealMutationObserver.observe(document.body, {
+  childList: true,
+  subtree: true
 });

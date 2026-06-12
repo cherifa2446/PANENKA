@@ -1682,6 +1682,20 @@ textarea {
    Animation globale au chargement
    Pour toutes les pages
 ================================ */
+/* ================================
+   Animation au scroll partout
+================================ */
+
+.reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.reveal-item.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 @keyframes fadeUpPanenka {
   from {
@@ -1695,21 +1709,6 @@ textarea {
   }
 }
 
-.page-title,
-.page-intro,
-.section-head,
-.feature-block,
-.contact-form,
-.contact-side,
-.card,
-.partner,
-.social-link,
-.info-card,
-.story-block,
-.mission-block {
-  opacity: 0;
-  animation: fadeUpPanenka 0.8s ease forwards;
-}
 
 .page-title {
   animation-delay: 0.15s;
@@ -2151,4 +2150,15 @@ textarea {
 html, body {
   overflow-x: hidden !important;
   max-width: 100vw;
+}
+@media (max-width: 760px) {
+  .article-hero {
+    height: 280px;
+  }
+}
+
+@media (max-width: 520px) {
+  .article-hero {
+    height: 230px;
+  }
 }
