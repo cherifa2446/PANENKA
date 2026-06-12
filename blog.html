@@ -123,42 +123,51 @@
           return;
         }
 
+
         data.articles.forEach(article => {
-          const card = document.createElement("article");
-          card.className = "card blog-card";
+  const card = document.createElement("article");
+  card.className = "card blog-card";
 
-          const dateText = article.date
-            ? new Date(article.date).toLocaleDateString("fr-CA", {
-                day: "numeric",
-                month: "long",
-                year: "numeric"
-              })
-            : "";
+  const dateText = article.date
+    ? new Date(article.date).toLocaleDateString("fr-CA", {
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      })
+    : "";
 
-          card.innerHTML = `
-            ${article.image 
-              ? `<img class="blog-image" src="${article.image}" alt="${article.title}">` 
-              : `<div class="media-box gray"></div>`
-            }
+  const articleUrl = `article.html?id=${article.slug}`;
 
-            <div class="card-body">
-              <p class="card-meta">
-                ${article.category ? article.category : "Article"}
-                ${dateText ? " · " + dateText : ""}
-              </p>
+  const shortExcerpt = article.excerpt && article.excerpt.length > 150
+    ? article.excerpt.substring(0, 150) + "..."
+    : article.excerpt;
 
-              <h3 class="card-title">${article.title}</h3>
+  card.innerHTML = `
+    <a class="blog-card-link" href="${articleUrl}" aria-label="Lire l'article ${article.title}">
+      <div class="blog-image-wrap">
+        ${article.image 
+          ? `<img class="blog-image" src="${article.image}" alt="${article.title}">` 
+          : `<div class="media-box gray"></div>`
+        }
+      </div>
 
-              <p class="card-text">${article.excerpt}</p>
+      <div class="card-body">
+        <p class="card-meta">
+          ${article.category ? article.category : "Article"}
+          ${dateText ? " · " + dateText : ""}
+        </p>
 
-              <a class="btn btn-outline" href="article.html?id=${article.slug}">
-                Lire plus
-              </a>
-            </div>
-          `;
+        <h3 class="card-title">${article.title}</h3>
 
-          blogGrid.appendChild(card);
-        });
+        <p class="card-text">${shortExcerpt}</p>
+
+        <span class="btn btn-outline">Lire plus</span>
+      </div>
+    </a>
+  `;
+
+  blogGrid.appendChild(card);
+});
       })
       .catch(error => {
         console.error("Erreur blog:", error);
