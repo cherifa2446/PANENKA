@@ -90,8 +90,6 @@ const revealSelectors = `
   .feature-content,
   .feature-content h2,
   .card,
-  .blog-card,
-  .photo-card,
   .partner,
   .partner strong,
   .social-link,
