@@ -1015,6 +1015,28 @@ textarea {
   pointer-events: none;
 }
 
+select {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #fff;
+  padding: 15px 16px;
+  font: inherit;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+select:focus {
+  border-color: rgba(242, 224, 78, 0.45);
+  box-shadow: 0 0 0 3px rgba(242, 224, 78, 0.05);
+}
+
+select option {
+  background: #0b0d0b;
+  color: #fff;
+}
+
 /* ================================
    Approche de travail - Panenka premium
 ================================ */
@@ -1933,7 +1955,7 @@ textarea {
 ================================ */
 
 .creators-section .section-head {
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .creators-section .section-head > div {
@@ -1985,7 +2007,7 @@ textarea {
 }
 
 .creator-content {
-  padding: 24px;
+  padding: 18px 24px 20px;
 }
 
 .creator-content h3 {
