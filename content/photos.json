@@ -1,34 +1,51 @@
 {
-  "photos": [
+  "albums": [
     {
-      "title": "TESTss",
-      "team": "TESTss",
-      "image": "images/uploads/photo-2.jpg",
-      "theme": "green"
-    },
-    {
-      "title": "Action terrain",
-      "team": "CS Saint-Laurent",
-      "image": "images/uploads/photo-2.jpg",
-      "theme": "blue"
-    },
-    {
-      "title": "Célébration",
-      "team": "AS Blainville",
-      "image": "images/uploads/photo-3.jpg",
-      "theme": "green"
-    },
-    {
-      "title": "Avant-match",
-      "team": "FC Longueuil",
-      "image": "images/uploads/photo-4.jpg",
-      "theme": "gray"
-    },
-    {
-      "title": "test 2 ",
-      "team": "test 2 ",
-      "image": "images/uploads/capture-d’écran-2025-10-16-142251.png",
-      "theme": "red"
+      "title": "Canada vs Irlande",
+      "id": "canada-irlande",
+      "date": "2026-08-19",
+      "location": "Montréal, Québec",
+      "competition": "International",
+      "type": "match",
+      "cover": "images/uploads/photo-2.jpg",
+      "keywords": [
+        "canada",
+        "irlande",
+        "international",
+        "match"
+      ],
+      "photos": [
+        {
+          "title": "TESTss",
+          "image": "images/uploads/photo-2.jpg",
+          "photographer": "Panenka",
+          "alt": "Photo du match Canada vs Irlande"
+        },
+        {
+          "title": "Action terrain",
+          "image": "images/uploads/photo-2.jpg",
+          "photographer": "Panenka",
+          "alt": "Action de jeu sur le terrain"
+        },
+        {
+          "title": "Célébration",
+          "image": "images/uploads/photo-3.jpg",
+          "photographer": "Panenka",
+          "alt": "Célébration pendant le match"
+        },
+        {
+          "title": "Avant-match",
+          "image": "images/uploads/photo-4.jpg",
+          "photographer": "Panenka",
+          "alt": "Moment avant le match"
+        },
+        {
+          "title": "Test 2",
+          "image": "images/uploads/capture-d’écran-2025-10-16-142251.png",
+          "photographer": "Panenka",
+          "alt": "Photo de test"
+        }
+      ]
     }
   ]
 }

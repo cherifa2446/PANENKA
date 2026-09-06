@@ -2,56 +2,115 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "images/upload"
-public_folder: "/images/upload"
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "settings"
     label: "Contenu du site"
     files:
+
       - name: "photos"
         label: "Nos photos"
         file: "content/photos.json"
+
         fields:
-          - label: "Photos"
-            name: "photos"
+          - label: "Albums"
+            name: "albums"
             widget: "list"
-            summary: "{{fields.title}} - {{fields.team}}"
+            summary: "{{fields.title}}"
+
             fields:
-              - label: "Titre de la photo"
+              - label: "Nom du match / événement"
                 name: "title"
                 widget: "string"
 
-              - label: "Équipe / texte en dessous"
-                name: "team"
+              - label: "Identifiant de l'album"
+                name: "id"
                 widget: "string"
+                hint: "Exemple : canada-irlande. Mets seulement des lettres minuscules, des chiffres et des tirets."
 
-              - label: "Image"
-                name: "image"
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                required: false
+                format: "YYYY-MM-DD"
+                date_format: "DD/MM/YYYY"
+                time_format: false
+
+              - label: "Lieu"
+                name: "location"
+                widget: "string"
+                required: false
+
+              - label: "Compétition"
+                name: "competition"
+                widget: "string"
+                required: false
+
+              - label: "Type d'album"
+                name: "type"
+                widget: "select"
+                default: "match"
+                options:
+                  - label: "Match"
+                    value: "match"
+                  - label: "Événement"
+                    value: "event"
+                  - label: "Club"
+                    value: "club"
+                  - label: "Compétition"
+                    value: "competition"
+
+              - label: "Photo de couverture"
+                name: "cover"
                 widget: "image"
 
-              - label: "Couleur de secours"
-                name: "theme"
-                widget: "select"
+              - label: "Mots-clés"
+                name: "keywords"
+                widget: "list"
                 required: false
-                options:
-                  - label: "Rouge"
-                    value: "red"
-                  - label: "Bleu"
-                    value: "blue"
-                  - label: "Vert"
-                    value: "green"
-                  - label: "Gris"
-                    value: "gray"
+                field:
+                  label: "Mot-clé"
+                  name: "keyword"
+                  widget: "string"
+
+              - label: "Photos de l'album"
+                name: "photos"
+                widget: "list"
+                summary: "{{fields.title}}"
+
+                fields:
+                  - label: "Titre / description"
+                    name: "title"
+                    widget: "string"
+                    required: false
+
+                  - label: "Image"
+                    name: "image"
+                    widget: "image"
+
+                  - label: "Photographe"
+                    name: "photographer"
+                    widget: "string"
+                    required: false
+
+                  - label: "Texte alternatif"
+                    name: "alt"
+                    widget: "string"
+                    required: false
+
 
       - name: "blog"
         label: "Blog"
         file: "content/blog.json"
+
         fields:
           - label: "Articles"
             name: "articles"
             widget: "list"
             summary: "{{fields.title}}"
+
             fields:
               - label: "Titre de l'article"
                 name: "title"
