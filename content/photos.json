@@ -3,34 +3,28 @@
     {
       "photos": [
         {
-          "title": "TESTss",
-          "image": "images/uploads/photo-2.jpg",
-          "photographer": "Panenka",
-          "alt": "Photo du match Canada vs Irlande"
+          "image": "/images/uploads/osc07362.jpg"
         },
         {
-          "title": "Action terrain",
-          "image": "images/uploads/photo-2.jpg",
-          "photographer": "Panenka",
-          "alt": "Action de jeu sur le terrain"
+          "image": "/images/uploads/osc07340.jpg"
         },
         {
-          "title": "Célébration",
-          "image": "images/uploads/photo-3.jpg",
-          "photographer": "Panenka",
-          "alt": "Célébration pendant le match"
+          "image": "/images/uploads/osc07233.jpg"
         },
         {
-          "title": "Avant-match",
-          "image": "images/uploads/photo-4.jpg",
-          "photographer": "Panenka",
-          "alt": "Moment avant le match"
+          "image": "/images/uploads/osc07206.jpg"
         },
         {
-          "title": "Test 2",
-          "image": "images/uploads/capture-d’écran-2025-10-16-142251.png",
-          "photographer": "Panenka",
-          "alt": "Photo de test"
+          "image": "/images/uploads/osc07145.jpg"
+        },
+        {
+          "image": "/images/uploads/osc07139.jpg"
+        },
+        {
+          "image": "/images/uploads/osc07131.jpg"
+        },
+        {
+          "image": "/images/uploads/osc07131.jpg"
         }
       ],
       "keywords": [
