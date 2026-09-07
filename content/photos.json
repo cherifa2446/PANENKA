@@ -1,19 +1,6 @@
 {
   "albums": [
     {
-      "title": "Canada vs Irlande",
-      "id": "canada-irlande",
-      "date": "2026-08-19",
-      "location": "Montréal, Québec",
-      "competition": "International",
-      "type": "match",
-      "cover": "images/uploads/photo-2.jpg",
-      "keywords": [
-        "canada",
-        "irlande",
-        "international",
-        "match"
-      ],
       "photos": [
         {
           "title": "TESTss",
@@ -45,7 +32,20 @@
           "photographer": "Panenka",
           "alt": "Photo de test"
         }
-      ]
+      ],
+      "keywords": [
+        "canada",
+        "irlande",
+        "international",
+        "match"
+      ],
+      "date": "2026-08-19",
+      "location": "Montréal, Québec",
+      "cover": "/images/uploads/osc05928.jpg",
+      "title": "Canada vs Irlande",
+      "type": "match",
+      "id": "canada-irlande",
+      "competition": "International"
     }
   ]
 }
