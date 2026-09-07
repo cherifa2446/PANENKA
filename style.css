@@ -3701,204 +3701,141 @@ span + span::before {
 
 
 /* ==========================================================
-   33. RESPONSIVE — TABLETTE / NAVBAR
+   PANENKA — RESPONSIVE GLOBAL
+   Desktop conservé / adaptation tablette + mobile
+========================================================== */
+
+
+/* ==========================================================
+   1. SÉCURITÉ RESPONSIVE GLOBALE
+========================================================== */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+main,
+section,
+.container,
+.card,
+.partner,
+.info-card,
+.feature-block,
+.story-block,
+.mission-block,
+.approach-card,
+.creator-card,
+.team-card {
+  min-width: 0;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea,
+select {
+  max-width: 100%;
+}
+
+
+/* ==========================================================
+   2. TABLETTE / MENU MOBILE
+   <= 1050px
 ========================================================== */
 
 @media (max-width: 1050px) {
 
-  .navbar {
-    width: 100%;
-    height: 72px;
+  /* -------------------------
+     CONTAINER
+  ------------------------- */
 
-    padding:
-      0 20px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .container {
+    width: min(
+      calc(100% - 48px),
+      var(--container)
+    );
   }
 
-  .logo {
-    height: auto;
 
-    margin-left: 0;
+
+  /* -------------------------
+     GRILLES
+  ------------------------- */
+
+  .grid-4 {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
-  .logo img {
-    width: auto;
-    height: 52px;
+  .feature-block,
+  .contact-layout {
+    grid-template-columns: 1fr;
   }
 
-  .nav-actions {
-    margin: 0;
-
-    gap: 0;
+  .approach-grid {
+    grid-template-columns: 1fr;
   }
 
-  .nav-actions .btn {
-    display: none;
+  .team-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
-  .menu-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 44px;
-    height: 44px;
-
-    flex-shrink: 0;
-
-    border:
-      1px solid rgba(255,255,255,0.14);
-
-    background:
-      rgba(255,255,255,0.04);
+  .executive-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
-  .nav-links {
-    position: fixed;
 
-    top: 72px;
+  /* -------------------------
+     HERO ACCUEIL
+  ------------------------- */
 
-    left: 0;
-    right: 0;
-
-    width: 100%;
-    max-width: 100%;
-
-    height:
-      calc(100dvh - 72px);
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    gap: 0;
-
-    padding:
-      32px 28px 48px;
-
-    overflow-y: auto;
-
-    border-top:
-      1px solid rgba(242,224,78,0.15);
-
-    border-left: none;
-
-    background:
-      rgba(2,4,3,0.98);
-
-    box-shadow: none;
-
-    backdrop-filter:
-      blur(20px);
-
-    z-index: 9998;
-
-    transform:
-      translateX(100%);
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    pointer-events: none;
-
-    transition:
-      transform 0.25s ease,
-      opacity 0.25s ease,
-      visibility 0.25s ease;
-  }
-
-  .nav-links.open {
-    transform:
-      translateX(0);
-
-    opacity: 1;
-
-    visibility: visible;
-
-    pointer-events: auto;
-  }
-
-  .nav-links li {
-    width: 100%;
-
-    border-bottom:
-      1px solid rgba(255,255,255,0.06);
-  }
-
-  .nav-links a {
-    display: block;
-
-    padding:
-      20px 0;
-
-    color:
-      rgba(255,255,255,0.75);
-
-    font-size: 15px;
-
-    letter-spacing: 5px;
-  }
-
-  .nav-links a:hover,
-  .nav-links a.active {
-    color: var(--green);
-  }
-
-  .nav-links-mobile-cta {
-    margin-top: 36px;
-
-    padding-top: 28px;
-
-    border-top:
-      1px solid rgba(242,224,78,0.18);
+  .hero,
+  .hero-inner {
+    min-height: auto;
   }
 
   .hero-inner {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     align-items: start;
 
-    padding-top: 75px;
+    padding:
+      70px 0 55px;
   }
 
   .hero-copy {
     grid-column: 1;
+
+    padding-top: 0;
   }
 
   .hero-stats {
     position: static;
 
-    margin-top: 46px;
+    margin-top: 48px;
   }
 
-  .grid-4 {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
 
-  .feature-block,
-  .contact-layout {
-    grid-template-columns:
-      1fr;
-  }
-}
-
-
-/* ==========================================================
-   34. RESPONSIVE — 1000px
-========================================================== */
-
-@media (max-width: 1000px) {
-
-  .approach-grid {
-    grid-template-columns:
-      1fr;
-  }
+  /* -------------------------
+     APPROCHE
+  ------------------------- */
 
   .approach-card {
     min-height: auto;
@@ -3909,58 +3846,41 @@ span + span::before {
   }
 
   .panenka-quote {
-    margin-top: 65px;
+    margin-top: 60px;
+
+    padding-top: 45px;
   }
 
   .panenka-quote p {
-    font-size: 42px;
-  }
-}
-
-
-/* ==========================================================
-   35. RESPONSIVE — GALERIE TABLETTE
-========================================================== */
-
-@media (max-width: 900px) {
-
-  .gallery-hero {
-    padding:
-      80px 0 65px;
+    font-size:
+      clamp(26px, 5vw, 40px);
   }
 
-  .albums-grid {
-    gap:
-      38px 18px;
-  }
+
+  /* -------------------------
+     GALERIE
+  ------------------------- */
 
   .gallery-future-inner {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 40px;
   }
 
   .album-page-heading {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
-    gap: 35px;
-  }
-
-  .album-page-stats {
-    justify-content:
-      flex-start;
+    gap: 34px;
   }
 
   .album-photo-grid {
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2, minmax(0, 1fr));
   }
 
   .gallery-license-note {
     grid-template-columns:
-      auto 1fr;
+      auto minmax(0, 1fr);
   }
 
   .gallery-license-note div {
@@ -3980,91 +3900,294 @@ span + span::before {
 
 
 /* ==========================================================
-   36. RESPONSIVE — MOBILE
+   3. TABLETTE VERTICALE
+   <= 850px
+========================================================== */
+
+@media (max-width: 850px) {
+
+  /* -------------------------
+     SECTIONS
+  ------------------------- */
+
+  .section {
+    padding:
+      52px 0;
+  }
+
+  .section-head {
+    gap: 14px;
+
+    margin-bottom: 24px;
+  }
+
+
+  /* -------------------------
+     TITRES
+  ------------------------- */
+
+  .section-head h2 {
+    font-size:
+      clamp(30px, 6vw, 42px);
+  }
+
+  .page-title {
+    font-size:
+      clamp(40px, 9vw, 64px);
+  }
+
+
+  /* -------------------------
+     GRILLES
+  ------------------------- */
+
+  .grid-3 {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .partner-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .story-mission-grid {
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+  .story-mission-grid::before {
+    display: none;
+  }
+
+  .creators-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+  }
+
+
+  /* -------------------------
+     GALERIE
+  ------------------------- */
+
+  .gallery-hero {
+    padding:
+      80px 0 66px;
+  }
+
+  .albums-grid {
+    gap:
+      38px 18px;
+  }
+
+  .album-page-stats {
+    justify-content: flex-start;
+  }
+}
+
+
+/* ==========================================================
+   4. MOBILE PRINCIPAL
+   <= 760px
 ========================================================== */
 
 @media (max-width: 760px) {
 
+  /* -------------------------
+     CONTAINER
+  ------------------------- */
+
   .container,
   .hero-inner {
     width:
-      min(
-        calc(100% - 32px),
-        var(--container)
-      );
+      calc(100% - 32px);
+
+    margin-left: auto;
+    margin-right: auto;
   }
 
-  .hero,
-  .hero-inner {
-    min-height: auto;
+
+
+
+  /* -------------------------
+     ESPACEMENT DES SECTIONS
+  ------------------------- */
+
+  .section {
+    padding:
+      42px 0;
   }
+
+  .section.tight {
+    padding-top: 24px;
+  }
+
+  .page-hero {
+    padding:
+      46px 0 36px;
+  }
+
+  .story-mission-section,
+  .approach-section {
+    padding:
+      60px 0;
+  }
+
+
+  /* -------------------------
+     TITRES / TEXTES
+  ------------------------- */
+
+  .page-title {
+    margin-top: 12px;
+
+    font-size:
+      clamp(36px, 11vw, 52px);
+
+    line-height: 0.95;
+
+    letter-spacing: -1.5px;
+  }
+
+  .page-intro {
+    margin-top: 18px;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+  .section-head {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .section-head h2 {
+    font-size:
+      clamp(29px, 8vw, 38px);
+
+    letter-spacing: -1px;
+  }
+
+  .section-subtitle {
+    margin-top: -4px;
+    margin-bottom: 22px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+
+  .view-all {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+  }
+
+
+  /* -------------------------
+     BOUTONS
+  ------------------------- */
+
+  .btn {
+    min-height: 46px;
+
+    padding:
+      0 18px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.6px;
+  }
+
+
+  /* -------------------------
+     HERO ACCUEIL
+  ------------------------- */
 
   .hero-inner {
     padding:
-      44px 0 48px;
-  }
-
-  .hero-copy {
-    padding-top: 0;
+      46px 0 48px;
   }
 
   .hero-title {
+    margin-top: 12px;
+
     font-size:
-      clamp(42px, 14vw, 64px);
+      clamp(38px, 13vw, 58px);
+
+    line-height: 0.92;
+
+    letter-spacing: -1.5px;
   }
 
   .hero-subtitle {
+    margin-top: 14px;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
     letter-spacing: 2px;
   }
 
   .hero-text {
     max-width: 100%;
 
+    margin-top: 18px;
+
     font-size: 15px;
+
+    line-height: 1.65;
   }
 
   .hero-buttons {
-    flex-direction: row;
+    display: grid;
 
-    gap: 10px;
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
 
-    margin-top: 26px;
+    gap: 9px;
+
+    margin-top: 25px;
   }
 
   .hero-buttons .btn {
-    width: auto;
+    width: 100%;
 
-    flex: 1;
-
-    min-height: 50px;
+    min-height: 48px;
 
     padding:
-      0 16px;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
+      0 12px;
   }
 
   .hero-stats {
     display: grid;
 
     grid-template-columns:
-      repeat(3, 1fr);
+      repeat(3, minmax(0, 1fr));
 
     gap: 0;
 
-    margin-top: 40px;
+    margin-top: 36px;
 
-    padding-top: 28px;
+    padding-top: 24px;
 
     border-top:
       1px solid rgba(255,255,255,0.08);
   }
 
   .hero-stats > div {
+    min-width: 0;
+
     padding:
-      0 8px;
+      0 7px;
 
     text-align: center;
 
@@ -4077,281 +4200,732 @@ span + span::before {
   }
 
   .stat-number {
-    font-size: 22px;
+    font-size: 21px;
+
+    white-space: normal;
   }
 
   .stat-label {
-    margin-top: 6px;
+    margin-top: 7px;
 
-    font-size: 9px;
+    font-size: 8px;
 
-    letter-spacing: 2px;
+    line-height: 1.35;
+
+    letter-spacing: 1.5px;
+
+    white-space: normal;
   }
 
   .hero-field {
-    left: -12%;
+    left: auto;
+    right: -110px;
+
     bottom: 100px;
 
-    width: 520px;
+    width: 330px;
+    height: 210px;
 
-    opacity: 0.5;
+    opacity: 0.32;
   }
+
+
+  /* -------------------------
+     CARTES
+  ------------------------- */
 
   .grid-3,
-  .grid-4,
-  .partner-grid,
-  .story-mission-grid,
-  .approach-grid {
-    grid-template-columns:
-      1fr;
+  .grid-4 {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
   }
 
-  .section-head {
-    align-items:
-      flex-start;
-
-    flex-direction:
-      column;
-  }
-
-  .section {
+  .card-body {
     padding:
-      40px 0;
+      16px 16px 18px;
   }
 
-  .page-hero {
+  .card-title {
+    font-size: 17px;
+  }
+
+
+  /* -------------------------
+     MEDIA BOX / IMAGES
+  ------------------------- */
+
+  .media-box {
+    width: 100%;
+
+    transform: none;
+  }
+
+  .media-box:hover {
+    transform: none;
+  }
+
+  .media-box::before {
+    inset:
+      10px -10px -10px 10px;
+  }
+
+  .media-box img {
+    object-position: center;
+  }
+
+
+  /* -------------------------
+     FEATURE BLOCK
+  ------------------------- */
+
+  .feature-block {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .feature-content {
     padding:
-      45px 0 32px;
+      28px 22px;
   }
 
-  .page-title {
+  .feature-content h2 {
     font-size:
-      clamp(36px, 12vw, 54px);
+      clamp(30px, 9vw, 42px);
   }
 
-  .feature-block,
-  .contact-layout {
+  .feature-content p {
+    font-size: 16px;
+
+    line-height: 1.65;
+  }
+
+  .feature-stats {
+    gap: 18px;
+
+    margin-top: 22px;
+  }
+
+
+  /* -------------------------
+     PARTENAIRES
+  ------------------------- */
+
+  .partner-grid {
     grid-template-columns:
-      1fr;
-  }
+      repeat(2, minmax(0, 1fr));
 
-  .feature-content,
-  .contact-form,
-  .contact-side,
-  .story-block,
-  .mission-block,
-  .approach-card {
-    padding: 24px;
+    gap: 12px;
   }
 
   .partner,
   .info-card {
-    min-height: auto;
+    min-height: 140px;
+
+    padding:
+      20px 14px;
+
+    gap: 12px;
   }
 
+  .partner img {
+    width: 88px;
+    height: 68px;
+
+    margin-top: 0;
+
+    object-fit: contain;
+  }
+
+  .partner strong,
+  .info-card strong {
+    font-size: 15px;
+  }
+
+  .partner span,
+  .info-card span {
+    font-size: 13px;
+
+    line-height: 1.45;
+  }
+
+
+  /* -------------------------
+     RÉSEAUX SOCIAUX
+  ------------------------- */
+
   .social-grid {
-    gap: 20px;
+    gap: 14px;
+
+    margin-top: 24px;
 
     flex-wrap: wrap;
   }
 
-  .creators-grid {
-    grid-template-columns:
-      1fr;
+  .social-link {
+    width: 58px;
+    height: 58px;
+  }
 
-    gap: 35px;
+  .social-link i {
+    font-size: 30px;
+  }
+
+  .social-icons {
+    gap: 9px;
+
+    flex-wrap: wrap;
+  }
+
+  .social-icons a {
+    width: 38px;
+    height: 38px;
+
+    font-size: 16px;
+  }
+
+
+  /* -------------------------
+     HISTOIRE / MISSION
+  ------------------------- */
+
+  .story-mission-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .story-block,
+  .mission-block {
+    padding:
+      26px 20px;
+  }
+
+  .story-block h2,
+  .mission-block h2 {
+    margin-bottom: 30px;
+
+    font-size:
+      clamp(34px, 10vw, 46px);
+  }
+
+  .story-block h2::after,
+  .mission-block h2::after {
+    width: 52px;
+    height: 3px;
+
+    margin-top: 16px;
+  }
+
+  .story-block p,
+  .mission-block p,
+  .mission-block li {
+    font-size: 15px;
+
+    line-height: 1.7;
+  }
+
+
+  /* -------------------------
+     CRÉATEURS
+  ------------------------- */
+
+  .creators-grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
   }
 
   .creator-photo {
-    height: 420px;
+    height: auto;
+
+    aspect-ratio: 4 / 3;
+  }
+
+  .creator-content {
+    padding:
+      16px 18px 18px;
+  }
+
+  .creator-content h3 {
+    font-size: 19px;
+  }
+
+  .creator-content p {
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
   }
 
   .history-buttons {
     flex-direction: column;
 
     align-items: stretch;
+
+    gap: 9px;
   }
 
   .history-buttons .btn {
     width: 100%;
   }
 
+
+  /* -------------------------
+     ÉQUIPE
+  ------------------------- */
+
   .team-grid,
   .executive-grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
+
+    gap: 12px;
   }
 
-  .article-hero {
-    height: 280px;
-  }
+  .team-card {
+    min-height: 130px;
 
-  .site-footer {
     padding:
-      40px 0 24px;
+      20px;
   }
 
-  .footer-logo img {
-    width: 56px;
-
-    margin-bottom: 10px;
+  .team-card h3 {
+    font-size: 18px;
   }
 
-  .footer-grid {
-    grid-template-columns:
-      1fr 1fr;
+  .team-card p {
+    margin-top: 7px;
 
-    gap:
+    font-size: 10px;
+
+    letter-spacing: 1.2px;
+  }
+
+  .team-join {
+    margin-top: 38px;
+
+    padding:
       32px 20px;
   }
 
-  .footer-grid > div:first-child {
-    grid-column:
-      1 / -1;
-
-    display: flex;
-    align-items: center;
-
-    gap: 20px;
-
-    padding-bottom: 20px;
-
-    border-bottom:
-      1px solid rgba(255,255,255,0.07);
+  .team-join h2 {
+    font-size:
+      clamp(28px, 8vw, 38px);
   }
 
-  .footer-grid > div:first-child
-  .footer-logo {
-    margin: 0;
+  .team-join p {
+    margin:
+      14px auto 22px;
+
+    font-size: 15px;
+
+    line-height: 1.6;
   }
 
-  .footer-grid > div:first-child
-  .footer-logo img {
-    margin: 0;
+
+  /* -------------------------
+     APPROCHE
+  ------------------------- */
+
+  .approach-grid {
+    gap: 16px;
   }
 
-  .footer-credit {
-    margin-top: 0;
-
-    color:
-      rgba(255,255,255,0.5);
-
-    font-size: 13px;
+  .approach-card {
+    padding:
+      10px 12px;
   }
 
-  .footer-grid h4 {
+  .approach-body {
+    padding:
+      24px 18px 26px;
+  }
+
+  .approach-number {
     margin-bottom: 12px;
-
-    color:
-      rgba(255,255,255,0.45);
 
     font-size: 10px;
 
     letter-spacing: 3px;
   }
 
-  .footer-links {
-    gap: 12px;
+  .approach-body h3 {
+    margin-bottom: 12px;
+
+    font-size: 25px;
   }
 
-  .footer-links a {
-    font-size: 14px;
+  .approach-body p {
+    font-size: 15px;
+
+    line-height: 1.6;
   }
 
-  .footer-bottom {
-    margin-top: 24px;
-
-    padding-top: 18px;
-
-    flex-direction: column;
-
-    gap: 6px;
-
-    text-align: center;
-
-    font-size: 12px;
+  .approach-media {
+    height: 185px;
   }
-}
+
+  .panenka-quote {
+    margin-top: 45px;
+
+    padding-top: 36px;
+  }
+
+  .panenka-quote p {
+    font-size:
+      clamp(23px, 7vw, 34px);
+
+    line-height: 1.35;
+
+    letter-spacing: -0.5px;
+  }
 
 
-/* ==========================================================
-   37. RESPONSIVE — GALERIE MOBILE
-========================================================== */
+  /* -------------------------
+     BLOG
+  ------------------------- */
 
-@media (max-width: 650px) {
+  .blog-image-wrap {
+    height: 210px;
+  }
+
+  .article-section {
+    padding-top: 70px;
+  }
+
+  .article-title {
+    font-size:
+      clamp(34px, 10vw, 48px);
+  }
+
+  .article-hero {
+    height: auto;
+
+    aspect-ratio: 16 / 10;
+
+    margin:
+      20px 0 28px;
+  }
+
+  .article-body {
+    font-size: 16px;
+
+    line-height: 1.7;
+  }
+
+
+  /* -------------------------
+     FORMULAIRE
+  ------------------------- */
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+
+    gap: 16px;
+  }
+
+  .contact-form,
+  .contact-side {
+    padding:
+      24px 18px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  label {
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+  }
+
+  input,
+  textarea,
+  select {
+    min-height: 48px;
+
+    padding:
+      13px 14px;
+
+    font-size: 16px;
+  }
+
+  textarea {
+    min-height: 130px;
+  }
+
+
+  /* -------------------------
+     GALERIE — HERO
+  ------------------------- */
 
   .gallery-hero {
     padding:
-      65px 0 55px;
+      55px 0 45px;
+  }
+
+  .gallery-eyebrow,
+  .gallery-small-label {
+    font-size: 9px;
+
+    letter-spacing: 3px;
   }
 
   .gallery-hero h1 {
-    letter-spacing: -3px;
+    margin-top: 13px;
+
+    font-size:
+      clamp(42px, 15vw, 62px);
+
+    line-height: 0.9;
+
+    letter-spacing: -2.5px;
   }
 
   .gallery-hero p {
+    margin-top: 20px;
+
     font-size: 15px;
+
+    line-height: 1.6;
   }
+
+  .gallery-hero::after {
+    width: 360px;
+    height: 140px;
+
+    right: -140px;
+    bottom: -95px;
+  }
+
+
+  /* -------------------------
+     GALERIE — RECHERCHE
+  ------------------------- */
 
   .gallery-section {
     padding:
-      50px 0 80px;
+      42px 0 70px;
   }
 
   .gallery-tools {
-    margin-bottom: 50px;
+    margin-bottom: 42px;
   }
 
   .gallery-search {
-    height: 62px;
+    height: 56px;
   }
 
+  .gallery-search svg {
+    width: 18px;
+    height: 18px;
+
+    margin-right: 12px;
+  }
+
+  .gallery-search input {
+    min-height: 0;
+
+    padding: 0;
+
+    font-size: 15px;
+  }
+
+  .gallery-filters {
+    width: 100%;
+
+    gap: 7px;
+
+    margin-top: 16px;
+
+    padding-bottom: 8px;
+  }
+
+  .gallery-filter {
+    min-height: 38px;
+
+    padding:
+      0 14px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+  }
+
+
+  /* -------------------------
+     GALERIE — ALBUMS
+  ------------------------- */
+
   .gallery-heading {
+    flex-direction: column;
+
     align-items: flex-start;
 
-    flex-direction: column;
+    gap: 10px;
+
+    margin-bottom: 22px;
+  }
+
+  .gallery-heading h2 {
+    margin-top: 8px;
+
+    font-size:
+      clamp(30px, 9vw, 40px);
   }
 
   .albums-grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
-    gap: 40px;
+    gap: 34px;
   }
 
   .album-cover {
-    aspect-ratio:
-      16 / 11;
+    aspect-ratio: 16 / 10;
+  }
+
+  .album-count {
+    top: 12px;
+    right: 12px;
+
+    padding:
+      7px 9px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
   }
 
   .album-open {
+    left: 14px;
+    right: 14px;
+    bottom: 13px;
+
     opacity: 1;
 
     transform: none;
+
+    font-size: 9px;
+
+    letter-spacing: 1.7px;
   }
+
+  .album-arrow {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+  .album-info {
+    padding-top: 15px;
+  }
+
+  .album-meta {
+    gap: 8px;
+
+    font-size: 9px;
+
+    letter-spacing: 1.4px;
+  }
+
+  .album-meta span + span::before {
+    margin-right: 8px;
+  }
+
+  .album-info h3 {
+    margin-top: 8px;
+
+    font-size:
+      clamp(23px, 7vw, 29px);
+  }
+
+  .album-location {
+    margin-top: 7px;
+
+    font-size: 12px;
+  }
+
+
+  /* -------------------------
+     GALERIE — BIENTÔT
+  ------------------------- */
 
   .gallery-future {
     padding:
-      75px 0;
+      58px 0;
   }
+
+  .gallery-future-inner {
+    gap: 26px;
+  }
+
+  .gallery-future h2 {
+    font-size:
+      clamp(36px, 11vw, 50px);
+
+    letter-spacing: -1.8px;
+  }
+
+  .gallery-future-copy p {
+    font-size: 15px;
+
+    line-height: 1.65;
+  }
+
+  .gallery-future-features {
+    gap: 6px;
+
+    margin-top: 20px;
+  }
+
+  .gallery-future-features span {
+    padding:
+      8px 9px;
+
+    font-size: 8px;
+  }
+
+
+  /* -------------------------
+     PAGE ALBUM
+  ------------------------- */
 
   .album-page-header {
     padding:
-      45px 0 42px;
+      38px 0 34px;
   }
 
   .album-back {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+  }
+
+  .album-page-heading {
+    gap: 26px;
   }
 
   .album-page-heading h1 {
-    letter-spacing: -2.5px;
+    margin-top: 10px;
+
+    font-size:
+      clamp(38px, 12vw, 55px);
+
+    line-height: 0.92;
+
+    letter-spacing: -2px;
   }
 
   .album-page-stats {
     width: 100%;
 
-    gap: 25px;
+    gap: 12px;
   }
 
   .album-page-stats div {
@@ -4359,26 +4933,70 @@ span + span::before {
 
     flex: 1;
 
-    padding-top: 15px;
+    padding-top: 12px;
 
     border-top:
       1px solid rgba(255,255,255,0.08);
   }
 
+  .album-stat-label {
+    margin-bottom: 6px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+  }
+
+  .album-page-stats strong {
+    font-size: 13px;
+  }
+
+  .album-page-details {
+    gap: 6px;
+
+    margin-top: 24px;
+  }
+
+  .album-page-details span {
+    padding:
+      7px 9px;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+  }
+
   .album-gallery-section {
     padding:
-      50px 0 80px;
+      42px 0 65px;
   }
 
   .album-gallery-top {
+    flex-direction: column;
+
     align-items: flex-start;
 
-    flex-direction: column;
+    gap: 12px;
+
+    margin-bottom: 20px;
+  }
+
+  .album-gallery-top h2 {
+    margin-top: 7px;
+
+    font-size:
+      clamp(30px, 9vw, 40px);
+  }
+
+  .album-purchase-info {
+    font-size: 8px;
+
+    letter-spacing: 1.3px;
   }
 
   .album-photo-grid {
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2, minmax(0, 1fr));
 
     gap: 3px;
   }
@@ -4388,7 +5006,13 @@ span + span::before {
   }
 
   .album-photo-overlay {
-    padding: 10px;
+    padding: 9px;
+  }
+
+  .album-photo-view {
+    font-size: 8px;
+
+    letter-spacing: 1px;
   }
 
   .album-photo-buy {
@@ -4396,222 +5020,661 @@ span + span::before {
   }
 
   .gallery-license-note {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
-    gap: 12px;
+    gap: 10px;
+
+    margin-top: 28px;
+
+    padding-top: 20px;
+  }
+
+  .gallery-license-note > span {
+    font-size: 18px;
+  }
+
+  .gallery-license-note p {
+    font-size: 11px;
+
+    line-height: 1.55;
   }
 
   .gallery-license-note div {
     grid-column: auto;
 
-    flex-direction: column;
+    flex-direction: row;
 
-    gap: 10px;
+    flex-wrap: wrap;
+
+    gap: 12px;
   }
+
+
+  /* -------------------------
+     LIGHTBOX
+  ------------------------- */
 
   .photo-lightbox {
     padding:
-      60px 12px 20px;
+      56px 10px 12px;
 
     gap: 0;
   }
 
   .photo-lightbox-main {
     width: 100%;
+
+    max-height: 100%;
   }
 
   .photo-lightbox-main img {
     max-height:
-      calc(100vh - 190px);
+      calc(100dvh - 185px);
+  }
+
+  .photo-lightbox-close {
+    top: 10px;
+    right: 10px;
+
+    width: 40px;
+    height: 40px;
+
+    font-size: 23px;
   }
 
   .photo-lightbox-arrow {
     position: absolute;
 
-    top: 50%;
+    top: 48%;
 
     z-index: 2;
 
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
 
     background:
       rgba(0,0,0,0.72);
+
+    font-size: 16px;
   }
 
   .photo-lightbox-prev {
-    left: 12px;
+    left: 8px;
   }
 
   .photo-lightbox-next {
-    right: 12px;
+    right: 8px;
   }
 
   .photo-lightbox-footer {
-    align-items: flex-start;
-
     flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+
+    padding:
+      12px 0 0;
   }
 
   .future-buy-button {
     width: 100%;
+
+    min-height: 42px;
   }
-}
 
 
-/* ==========================================================
-   38. RESPONSIVE — PETIT MOBILE
-========================================================== */
+  /* -------------------------
+     FOOTER COMPACT
+  ------------------------- */
 
-@media (max-width: 520px) {
-
-  .navbar {
-    height: 72px;
+  .site-footer {
+    margin-top: 30px;
 
     padding:
-      0 16px;
+      30px 0 20px;
   }
 
-  .logo img {
-    height: 48px;
+  .footer-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap:
+      22px 18px;
   }
 
-  .hero-inner {
-    width:
-      calc(100% - 32px);
+  .footer-grid > div:first-child {
+    grid-column:
+      1 / -1;
 
-    margin: 0 auto;
+    display: flex;
+    align-items: center;
 
-    padding:
-      40px 0 44px;
+    gap: 14px;
+
+    padding-bottom: 16px;
+
+    border-bottom:
+      1px solid rgba(255,255,255,0.06);
   }
 
-  .hero-title {
-    font-size:
-      clamp(38px, 16vw, 52px);
+  .footer-logo img {
+    width: 50px;
 
-    line-height: 0.9;
+    margin: 0;
   }
 
-  .hero-subtitle {
-    margin-top: 14px;
+  .footer-credit {
+    margin: 0;
 
-    font-size: 11px;
-
-    letter-spacing: 2.5px;
+    font-size: 12px;
   }
 
-  .hero-text {
-    margin-top: 16px;
+  .footer-grid h4 {
+    margin-bottom: 8px;
 
-    font-size: 15px;
-
-    line-height: 1.7;
-  }
-
-  .hero-buttons {
-    gap: 8px;
-
-    margin-top: 26px;
-  }
-
-  .hero-buttons .btn {
-    min-height: 48px;
-
-    font-size: 10px;
+    font-size: 9px;
 
     letter-spacing: 2px;
   }
 
-  .hero-field {
-    left: auto;
-    right: -95px;
-
-    bottom: 185px;
-
-    width: 260px;
-    height: 260px;
-
-    opacity: 0.28;
+  .footer-links {
+    gap: 7px;
   }
 
-  .page-title {
-    font-size:
-      clamp(28px, 12vw, 44px);
-  }
-
-  .page-intro,
-  .card-text,
-  .card-subtitle,
-  .card-meta,
-  .section-subtitle,
-  .story-block p,
-  .mission-block p,
-  .mission-block li,
-  .approach-body p,
-  .footer-grid p,
   .footer-links a {
-    font-size: 15px;
-  }
+    font-size: 13px;
 
-  .photo-card .media-box {
-    min-height: 220px;
-  }
-
-  .contact-form,
-  .contact-side {
-    padding: 18px;
-  }
-
-  .social-icons {
-    justify-content: flex-start;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-  }
-
-  .social-link {
-    width: 70px;
-    height: 70px;
-  }
-
-  .article-hero {
-    height: 230px;
-  }
-
-  .lightbox {
-    padding: 16px;
-  }
-
-  .lightbox-content {
-    min-height: 360px;
+    line-height: 1.45;
   }
 
   .footer-bottom {
+    margin-top: 20px;
+
+    padding-top: 14px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
     text-align: center;
   }
 }
 
 
 /* ==========================================================
-   39. RESPONSIVE — TRÈS PETIT MOBILE
+   5. PETITS TÉLÉPHONES
+   <= 520px
 ========================================================== */
 
-@media (max-width: 420px) {
+@media (max-width: 520px) {
+
+  /* -------------------------
+     CONTAINER
+  ------------------------- */
+
+  .container,
+  .hero-inner {
+    width:
+      calc(100% - 28px);
+  }
+
+
+  /* -------------------------
+     HERO
+  ------------------------- */
+
+  .hero-inner {
+    padding:
+      38px 0 42px;
+  }
+
+  .hero-title {
+    font-size:
+      clamp(35px, 13vw, 48px);
+  }
+
+  .hero-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons .btn {
+    min-height: 46px;
+  }
+
+  .hero-stats {
+    margin-top: 30px;
+
+    padding-top: 20px;
+  }
+
+  .stat-number {
+    font-size: 19px;
+  }
+
+  .stat-label {
+    font-size: 7.5px;
+
+    letter-spacing: 1px;
+  }
+
+
+  /* -------------------------
+     PARTENAIRES
+  ------------------------- */
+
+  .partner-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .partner {
+    min-height: 120px;
+
+    padding:
+      16px 10px;
+  }
+
+  .partner img {
+    width: 72px;
+    height: 55px;
+  }
+
+  .partner strong {
+    font-size: 14px;
+  }
+
+  .partner span {
+    font-size: 12px;
+  }
+
+
+  /* -------------------------
+     CARTES
+  ------------------------- */
+
+  .card-text,
+  .card-subtitle,
+  .card-meta {
+    font-size: 14px;
+  }
+
+
+  /* -------------------------
+     CRÉATEURS
+  ------------------------- */
+
+  .creator-photo {
+    aspect-ratio: 1 / 1;
+  }
+
+
+  /* -------------------------
+     GALERIE
+  ------------------------- */
+
+  .gallery-hero {
+    padding:
+      46px 0 38px;
+  }
+
+  .gallery-hero h1 {
+    font-size:
+      clamp(38px, 15vw, 52px);
+  }
 
   .gallery-filters {
+    margin-right: -14px;
+
     width:
-      calc(100vw - 32px);
+      calc(100% + 14px);
+  }
+
+  .album-cover {
+    aspect-ratio: 4 / 3;
   }
 
   .album-photo-grid {
     grid-template-columns:
-      repeat(2, 1fr);
+      repeat(2, minmax(0, 1fr));
   }
 
-  .album-info h3 {
-    font-size: 25px;
+
+  /* -------------------------
+     FORMULAIRES
+  ------------------------- */
+
+  .contact-form,
+  .contact-side {
+    padding:
+      20px 15px;
   }
+
+
+  /* -------------------------
+     FOOTER
+  ------------------------- */
+
+  .site-footer {
+    padding:
+      26px 0 18px;
+  }
+
+  .footer-grid {
+    gap:
+      18px 14px;
+  }
+
+  .footer-logo img {
+    width: 46px;
+  }
+
+  .footer-credit {
+    font-size: 11px;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+  }
+}
+
+
+/* ==========================================================
+   6. TRÈS PETITS ÉCRANS
+   <= 380px
+========================================================== */
+
+@media (max-width: 380px) {
+
+
+
+  .logo img {
+    height: 40px;
+  }
+
+  .container,
+  .hero-inner {
+    width:
+      calc(100% - 24px);
+  }
+
+  .hero-title {
+    font-size: 36px;
+  }
+
+  .hero-stats > div {
+    padding:
+      0 4px;
+  }
+
+  .stat-number {
+    font-size: 17px;
+  }
+
+  .partner-grid {
+    gap: 8px;
+  }
+
+  .partner {
+    padding:
+      14px 8px;
+  }
+
+  .partner img {
+    width: 65px;
+    height: 50px;
+  }
+
+  .gallery-filter {
+    padding:
+      0 12px;
+  }
+
+  .album-photo-grid {
+    gap: 2px;
+  }
+
+  .footer-grid {
+    gap:
+      16px 10px;
+  }
+}
+
+
+/* ==========================================================
+   7. ACCESSIBILITÉ — RÉDUCTION DES ANIMATIONS
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ==========================================================
+   NAVBAR MOBILE — STYLE 
+========================================================== */
+
+@media (max-width: 1050px) {
+
+  .navbar {
+    width: 100%;
+    height: 68px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    height: auto;
+    margin: 0;
+  }
+
+  .logo img {
+    height: 44px;
+    width: auto;
+  }
+
+  .nav-actions {
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-actions .btn {
+    display: none;
+  }
+
+
+  /* =========================
+     BURGER 3 LIGNES
+  ========================== */
+
+  .menu-toggle {
+    display: flex;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+
+    width: 25px;
+    height: 2px;
+
+    margin: 0;
+
+    background: #fff;
+
+    border-radius: 2px;
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.2s ease;
+  }
+
+
+  /* =========================
+     MENU MOBILE
+  ========================== */
+
+  .nav-links {
+    position: fixed;
+
+    top: 68px;
+    left: 0;
+
+    width: 100%;
+    height: auto;
+    max-height: 55vh;
+
+    padding:
+      18px 20px 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 0;
+
+    overflow-y: auto;
+
+    background:
+      rgba(2, 4, 3, 0.99);
+
+    border-top:
+      1px solid rgba(255,255,255,0.06);
+
+    border-bottom:
+      1px solid rgba(242,224,78,0.16);
+
+    box-shadow:
+      0 18px 35px rgba(0,0,0,0.45);
+
+    backdrop-filter:
+      blur(16px);
+
+    transform:
+      translateY(-20px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      transform 0.28s ease,
+      opacity 0.22s ease,
+      visibility 0.22s ease;
+
+    z-index: 9998;
+  }
+
+  .nav-links.open {
+    transform:
+      translateY(0);
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+
+  /* =========================
+     LIENS
+  ========================== */
+
+  .nav-links li {
+    width: 100%;
+
+    border-bottom:
+      1px solid rgba(255,255,255,0.055);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: 0;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    min-height: 52px;
+
+    padding:
+      0 4px;
+
+    color:
+      rgba(255,255,255,0.78);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2.4px;
+
+    text-transform: uppercase;
+
+    transition:
+      color 0.2s ease,
+      padding-left 0.2s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--green);
+
+    padding-left: 8px;
+  }
+
+
+  /* =========================
+     ANIMATION BURGER → X
+  ========================== */
+
+  .menu-toggle.active span:nth-child(1) {
+    transform:
+      translateY(7px)
+      rotate(45deg);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform:
+      translateY(-7px)
+      rotate(-45deg);
+  }
+
 }
