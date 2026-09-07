@@ -3894,11 +3894,6 @@ select {
     gap: 34px;
   }
 
-  .album-photo-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
-
   .gallery-license-note {
     grid-template-columns:
       auto minmax(0, 1fr);
@@ -4448,48 +4443,54 @@ select {
   }
 
 
-  /* -------------------------
-     CRÉATEURS
-  ------------------------- */
+/* -------------------------
+   CRÉATEURS
+------------------------- */
 
-  .creators-grid {
-    grid-template-columns: 1fr;
+.creators-grid {
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
 
-    gap: 24px;
-  }
+.creator-card {
+  width: 84%;
+  margin: 0 auto;
+}
 
-  .creator-photo {
-    height: auto;
+.creator-photo {
+  height: auto;
+  aspect-ratio: 4 / 3;
+}
 
-    aspect-ratio: 4 / 3;
-  }
+.creator-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
 
-  .creator-content {
-    padding:
-      16px 18px 18px;
-  }
+.creator-content {
+  padding: 16px 18px 18px;
+}
 
-  .creator-content h3 {
-    font-size: 19px;
-  }
+.creator-content h3 {
+  font-size: 19px;
+}
 
-  .creator-content p {
-    font-size: 10px;
+.creator-content p {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
 
-    letter-spacing: 1.5px;
-  }
+.history-buttons {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+}
 
-  .history-buttons {
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 9px;
-  }
-
-  .history-buttons .btn {
-    width: 100%;
-  }
+.history-buttons .btn {
+  width: 100%;
+}
 
 
   /* -------------------------
@@ -4585,21 +4586,24 @@ select {
   .approach-media {
     height: 185px;
   }
+.panenka-quote {
+  margin-top: 34px;
+  padding-top: 24px;
 
-  .panenka-quote {
-    margin-top: 45px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
 
-    padding-top: 36px;
-  }
+.panenka-quote p {
+  max-width: 100%;
 
-  .panenka-quote p {
-    font-size:
-      clamp(23px, 7vw, 34px);
+  font-size: clamp(18px, 5.5vw, 24px);
 
-    line-height: 1.35;
+  line-height: 1.3;
 
-    letter-spacing: -0.5px;
-  }
+  letter-spacing: -0.4px;
+
+  text-align: center;
+}
 
 
   /* -------------------------
@@ -5016,15 +5020,14 @@ select {
   }
 
   .album-photo-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-
-    gap: 3px;
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 
   .album-photo-item {
-    aspect-ratio: 1 / 1;
+    aspect-ratio: 4 / 3;
   }
+
 
   .album-photo-overlay {
     padding: 9px;
@@ -5227,6 +5230,18 @@ select {
   }
 }
 
+  .media-box.travail,
+  .presentation-media {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .media-box.travail img,
+  .presentation-media img {
+    width: 100%;
+    display: block;
+  }
+
 
 /* ==========================================================
    5. PETITS TÉLÉPHONES
@@ -5360,10 +5375,6 @@ select {
     aspect-ratio: 4 / 3;
   }
 
-  .album-photo-grid {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
-  }
 
 
   /* -------------------------
@@ -5402,6 +5413,16 @@ select {
   .footer-links a {
     font-size: 12px;
   }
+
+  .panenka-quote {
+  margin-top: 28px;
+  padding-top: 20px;
+}
+
+.panenka-quote p {
+  font-size: 18px;
+  line-height: 1.28;
+}
 }
 
 
