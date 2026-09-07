@@ -2426,7 +2426,9 @@ select option {
 .hero-subtitle,
 .hero-text,
 .hero-buttons,
-.hero-stats {
+.hero-stats,
+.page-title,
+.page-intro {
   opacity: 0;
 
   animation:
@@ -2435,11 +2437,13 @@ select option {
     forwards;
 }
 
-.hero-title {
+.hero-title,
+.page-title {
   animation-delay: 0.15s;
 }
 
-.hero-subtitle {
+.hero-subtitle,
+.page-intro {
   animation-delay: 0.3s;
 }
 
@@ -3074,7 +3078,24 @@ span + span::before {
   color:
     rgba(255,255,255,0.5);
 }
+.gallery-hero-eyebrow,
+.gallery-hero-title,
+.gallery-hero-intro {
+  opacity: 0;
+  animation: heroFadeUp 0.8s ease forwards;
+}
 
+.gallery-hero-eyebrow {
+  animation-delay: 0.1s;
+}
+
+.gallery-hero-title {
+  animation-delay: 0.2s;
+}
+
+.gallery-hero-intro {
+  animation-delay: 0.35s;
+}
 
 /* ==========================================================
    28. GALERIE — FUTURE MARKETPLACE
