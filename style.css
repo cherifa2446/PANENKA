@@ -464,7 +464,7 @@ button {
 .hero-image {
   position: absolute;
 
-  top: 0.1px;
+  top: 10px;
   left: -1%;
 
   width: 55%;
@@ -518,32 +518,7 @@ button {
 
 /* deuxième lumière plus concentrée au centre */
 
-.hero-image::after {
-  content: "";
 
-  position: absolute;
-
-  left: 14%;
-  top: 15%;
-
-  width: 58%;
-  height: 68%;
-
-  z-index: -1;
-
-  pointer-events: none;
-
-  background:
-    radial-gradient(
-      ellipse at center,
-
-      rgba(255, 230, 70, 0.25) 0%,
-      rgba(242, 224, 78, 0.13) 35%,
-      transparent 70%
-    );
-
-  filter: blur(40px);
-}
 
 
 /* ==========================================================
@@ -553,8 +528,8 @@ button {
 .hero-image img {
   position: absolute;
 
-  width: 110%;
-  height: 110%;
+  width: 105%;
+  height: 105%;
 
   object-fit: contain;
   object-position: center;
@@ -1301,9 +1276,11 @@ button {
   margin-top: 18px;
 
   font-size:
-    clamp(36px, 5vw, 60px);
+  clamp(30px, 4vw, 48px);
 
   line-height: 0.98;
+  
+  
 }
 
 .feature-content p {
@@ -2707,6 +2684,12 @@ select option {
     heroFadeUp
     0.8s ease
     forwards;
+}
+
+.hero-image {
+  opacity: 0;
+  animation: heroFadeUp 1.2s ease forwards;
+  animation-delay: 0.55s;
 }
 
 .hero-title,
