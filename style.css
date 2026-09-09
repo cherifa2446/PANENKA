@@ -5500,8 +5500,6 @@ select {
 
     text-align: center;
   }
-}
-
   .media-box.travail,
   .presentation-media {
     width: 90%;
@@ -5513,6 +5511,142 @@ select {
     width: 100%;
     display: block;
   }
+    .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+    padding: 38px 16px 42px;
+  }
+
+  /*
+    On enlève seulement les boîtes intermédiaires du layout.
+    Les éléments restent bien présents.
+  */
+  .hero-inner,
+  .hero-copy {
+    display: contents;
+  }
+
+
+  /* TITRE */
+  .hero-title {
+    grid-row: 1;
+
+    width: 100%;
+    margin: 0;
+  }
+
+
+  /* SOUS-TITRE */
+  .hero-subtitle {
+    grid-row: 2;
+
+    width: 100%;
+    margin-top: 14px;
+  }
+
+
+  /* TEXTE */
+  .hero-text {
+    grid-row: 3;
+
+    width: 100%;
+    max-width: none;
+
+    margin-top: 18px;
+  }
+
+
+  /* IMAGE */
+  .hero-image {
+    position: relative;
+
+    grid-row: 4;
+
+    top: auto;
+    left: auto;
+
+    width: 100%;
+    height: auto;
+
+    margin: 22px auto 18px;
+
+    transform: none;
+
+    z-index: 1;
+  }
+
+  .hero-image img {
+    position: relative;
+
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+    object-position: center;
+  }
+
+
+  /* HALO IMAGE */
+  .hero-image::before {
+    left: 50%;
+    top: 50%;
+
+    width: 220px;
+    height: 160px;
+
+    transform:
+      translate(-50%, -50%);
+
+    filter: blur(55px);
+  }
+
+  .hero-image::after {
+    left: 50%;
+    top: 50%;
+
+    width: 180px;
+    height: 130px;
+
+    transform:
+      translate(-50%, -50%);
+
+    filter: blur(35px);
+  }
+
+
+  /* BOUTONS */
+  .hero-buttons {
+    grid-row: 5;
+
+    width: 100%;
+
+    margin-top: 0;
+  }
+
+
+  /* STATS */
+  .hero-stats {
+    grid-row: 6;
+
+    position: static;
+
+    width: 100%;
+
+    margin-top: 38px;
+  }
+
+
+  /* Le terrain décoratif reste en arrière-plan */
+  .hero-field {
+    position: absolute;
+  }
+}
+
 
 
 /* ==========================================================
@@ -5992,3 +6126,5 @@ select {
   }
 
 }
+
+
