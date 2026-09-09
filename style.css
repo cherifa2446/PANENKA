@@ -464,11 +464,11 @@ button {
 .hero-image {
   position: absolute;
 
-  top: 65px;
-  left: -4%;
+  top: 80px;
+  left: 1%;
 
-  width: 65%;
-  height: 450px;
+  width: 55%;
+  height: 475px;
 
   overflow: visible;
 
@@ -505,12 +505,12 @@ button {
 
       rgba(242, 224, 78, 0.42) 0%,
       rgba(242, 224, 78, 0.30) 18%,
-      rgba(210, 190, 45, 0.18) 38%,
+      rgba(210, 190, 45, 0.18) 18%,
       rgba(150, 130, 20, 0.09) 55%,
-      transparent 73%
+      transparent 103%
     );
 
-  filter: blur(28px);
+  filter: blur(90px);
 
   transform: scale(1.08);
 }
@@ -558,16 +558,14 @@ button {
 
   object-fit: cover;
 
-  object-position: 50% 60%;
+  object-position: 30% 30%;
 
   display: block;
 
   z-index: 2;
 
   filter:
-    brightness(0.80)
-    contrast(1.12)
-    saturate(1.08)
+    brightness(0.87)
 
     /* petite lumière jaune autour des silhouettes */
     drop-shadow(
