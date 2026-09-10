@@ -2794,8 +2794,7 @@ select option {
 .gallery-hero {
   position: relative;
 
-  padding:
-    110px 0 90px;
+     padding: 35px 0 28px;
 
   overflow: hidden;
 
@@ -2883,25 +2882,49 @@ select option {
   line-height: 1.8;
 }
 
-
 /* ==========================================================
    26. GALERIE — OUTILS
 ========================================================== */
 
 .gallery-section {
-  padding:
-    72px 0 110px;
+  padding: 20px 0 80px;
 }
 
 .gallery-tools {
-  margin-bottom: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+
+  width: 100%;
+
+  margin-bottom: 26px;
 }
+
+.gallery-filters {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.gallery-search {
+  grid-column: 2;
+}
+
+
+/* =========================
+   RECHERCHE
+========================= */
 
 .gallery-search {
   position: relative;
 
   width: 100%;
-  height: 72px;
+  height: 52px;
 
   display: flex;
   align-items: center;
@@ -2918,12 +2941,12 @@ select option {
 }
 
 .gallery-search svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
 
   flex-shrink: 0;
 
-  margin-right: 20px;
+  margin-right: 14px;
 
   color:
     rgba(255,255,255,0.52);
@@ -2935,20 +2958,19 @@ select option {
   padding: 0;
 
   border: 0;
+  outline: 0;
 
   background: transparent;
-
   box-shadow: none;
 
   color: #fff;
 
-  font-size:
-    clamp(16px, 2vw, 20px);
+  font-size: 15px;
 }
 
 .gallery-search input:focus {
   border: 0;
-
+  outline: 0;
   box-shadow: none;
 }
 
@@ -2957,32 +2979,34 @@ select option {
     rgba(255,255,255,0.35);
 }
 
+
+/* =========================
+   FILTRES
+========================= */
+
 .gallery-filters {
   display: flex;
   align-items: center;
 
   gap: 10px;
 
-  margin-top: 22px;
-
-  padding-bottom: 6px;
-
-  overflow-x: auto;
-
-  scrollbar-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 .gallery-filters::-webkit-scrollbar {
   display: none;
 }
 
+
+/* BOUTONS FILTRES */
+
 .gallery-filter {
-  min-height: 42px;
+  min-height: 40px;
 
   flex-shrink: 0;
 
-  padding:
-    0 21px;
+  padding: 0 18px;
 
   border:
     1px solid rgba(255,255,255,0.09);
@@ -2992,10 +3016,10 @@ select option {
   color:
     rgba(255,255,255,0.52);
 
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 900;
 
-  letter-spacing: 2px;
+  letter-spacing: 1.2px;
 
   text-transform: uppercase;
 
@@ -3020,6 +3044,29 @@ select option {
   background: var(--green);
 
   color: #080906;
+}
+
+
+/* =========================
+   TABLETTE / MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+  .gallery-tools {
+    width: 100%;
+
+    margin-left: 0;
+
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .gallery-filters {
+    width: 100%;
+  }
+
 }
 
 
@@ -3231,17 +3278,51 @@ select option {
 }
 
 .album-arrow {
-  width: 39px;
-  height: 39px;
+  width: 30px;
+  height: 30px;
 
   display: grid;
   place-items: center;
 
-  background: var(--green);
+  background: transparent;
+  border: 0;
 
+  color: var(--green);
+}
+
+.album-arrow::before {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+
+  transform: rotate(0deg);
+}
+
+.album-arrow::after {
+  content: "";
+
+  position: absolute;
+
+  width: 13px;
+  height: 2px;
+
+  background: currentColor;
+
+  transform: rotate(-45deg);
+  transform-origin: center;
+}
+
+.album-card:hover .album-arrow {
+  background: var(--green);
   color: #080906;
 
-  font-size: 18px;
+  border-color: var(--green);
+
+  transform: translate(2px, -2px);
 }
 
 .album-info {

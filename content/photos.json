@@ -1,42 +1,61 @@
 {
   "albums": [
     {
-      "photos": [
-        {
-          "image": "/images/uploads/osc07362.jpg"
-        },
-        {
-          "image": "/images/uploads/osc07340.jpg"
-        },
-        {
-          "image": "/images/uploads/osc07233.jpg"
-        },
-        {
-          "image": "/images/uploads/osc07206.jpg"
-        },
-        {
-          "image": "/images/uploads/osc07145.jpg"
-        },
-        {
-          "image": "/images/uploads/osc07139.jpg"
-        },
-        {
-          "image": "/images/uploads/osc07131.jpg"
-        }
-      ],
+      "id": "canada-irlande",
+
+      "title": "Canada vs Irlande",
+
+      "date": "2026-08-19",
+
+      "location": "Montréal, Québec",
+
+      "cover": "/images/uploads/osc05928.jpg",
+
+      "competition": "International",
+
+      "gender": "",
+
+      "category": "international",
+
+      "type": "match",
+
       "keywords": [
         "canada",
         "irlande",
         "international",
         "match"
       ],
-      "date": "2026-08-19",
-      "location": "Montréal, Québec",
-      "cover": "/images/uploads/osc05928.jpg",
-      "title": "Canada vs Irlande",
-      "type": "match",
-      "id": "canada-irlande",
-      "competition": "International"
+
+      "photos": [
+        {
+          "image": "/images/uploads/osc07362.jpg",
+          "alt": "Canada vs Irlande - Photo 1"
+        },
+        {
+          "image": "/images/uploads/osc07340.jpg",
+          "alt": "Canada vs Irlande - Photo 2"
+        },
+        {
+          "image": "/images/uploads/osc07233.jpg",
+          "alt": "Canada vs Irlande - Photo 3"
+        },
+        {
+          "image": "/images/uploads/osc07206.jpg",
+          "alt": "Canada vs Irlande - Photo 4"
+        },
+        {
+          "image": "/images/uploads/osc07145.jpg",
+          "alt": "Canada vs Irlande - Photo 5"
+        },
+        {
+          "image": "/images/uploads/osc07139.jpg",
+          "alt": "Canada vs Irlande - Photo 6"
+        },
+        {
+          "image": "/images/uploads/osc07131.jpg",
+          "alt": "Canada vs Irlande - Photo 7"
+        }
+      ]
     }
   ]
 }

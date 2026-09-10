@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             <div class="album-open">
               <span>Voir l'album</span>
-              <span class="album-arrow">↗</span>
+              <span class="album-arrow" aria-hidden="true"></span>
             </div>
 
           </div>
@@ -181,22 +181,37 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
   /* =========================
+     NORMALISATION TEXTE
+  ========================== */
+
+  function normalizeText(value) {
+
+    return String(value || "")
+      .trim()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+  }
+
+
+  /* =========================
      RECHERCHE + FILTRES
   ========================== */
 
   function filterAlbums() {
 
     const search =
-      searchInput.value
-        .trim()
-        .toLowerCase();
+      normalizeText(searchInput.value);
 
 
     const filteredAlbums = albums.filter(album => {
 
       const keywords =
         Array.isArray(album.keywords)
-          ? album.keywords
+          ? album.keywords.map(keyword =>
+              normalizeText(keyword)
+            )
           : [];
 
 
@@ -204,10 +219,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         album.title || "",
         album.location || "",
         album.competition || "",
+        album.gender || "",
+        album.category || "",
         ...keywords
       ]
-        .join(" ")
-        .toLowerCase();
+        .map(item => normalizeText(item))
+        .join(" ");
 
 
       const matchesSearch =
@@ -219,9 +236,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (activeFilter !== "all") {
 
+        const normalizedFilter =
+          normalizeText(activeFilter);
+
+
+        const albumType =
+          normalizeText(album.type);
+
+
+        const albumCompetition =
+          normalizeText(album.competition);
+
+
+        const albumGender =
+          normalizeText(album.gender);
+
+
+        const albumCategory =
+          normalizeText(album.category);
+
+
         matchesFilter =
-          album.type === activeFilter ||
-          keywords.includes(activeFilter);
+          albumType === normalizedFilter ||
+          albumCompetition === normalizedFilter ||
+          albumGender === normalizedFilter ||
+          albumCategory === normalizedFilter ||
+          keywords.includes(normalizedFilter);
 
       }
 
@@ -237,14 +277,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
   /* =========================
-     ÉVÉNEMENTS
+     RECHERCHE
   ========================== */
 
-  searchInput.addEventListener(
-    "input",
-    filterAlbums
-  );
+  if (searchInput) {
 
+    searchInput.addEventListener(
+      "input",
+      filterAlbums
+    );
+
+  }
+
+
+  /* =========================
+     FILTRES
+  ========================== */
 
   filterButtons.forEach(button => {
 
@@ -257,8 +305,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       button.classList.add("active");
 
+
       activeFilter =
-        button.dataset.filter;
+        button.dataset.filter || "all";
 
 
       filterAlbums();
