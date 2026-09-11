@@ -3433,6 +3433,49 @@ span + span::before {
   animation-delay: 0.35s;
 }
 
+.album-back {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 42px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  text-transform: uppercase;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.album-back::before {
+  content: "";
+
+  width: 18px;
+  height: 1px;
+
+  margin-right: 10px;
+
+  background: var(--green);
+
+  transition:
+    width 0.25s ease;
+}
+
+.album-back:hover {
+  color: #fff;
+  transform: translateX(-2px);
+}
+
+.album-back:hover::before {
+  width: 26px;
+}
+
 /* ==========================================================
    28. GALERIE — FUTURE MARKETPLACE
 ========================================================== */
