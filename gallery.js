@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", async () => {
 
+  /* =========================
+     TEST CONNEXION BACKEND
+  ========================== */
+
+  try {
+    const response = await fetch("http://localhost:3000/events");
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la connexion au backend");
+    }
+
+    const events = await response.json();
+
+    console.log("Événements reçus du backend :", events);
+
+  } catch (error) {
+    console.error("Erreur API :", error);
+  }
+
+
   const albumsGrid = document.getElementById("albumsGrid");
 
   if (!albumsGrid) return;
