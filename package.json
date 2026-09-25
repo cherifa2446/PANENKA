@@ -1,0 +1,23 @@
+{
+  "name": "panenka-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "album.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cherifa2446/PANENKA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cherifa2446/PANENKA/issues"
+  },
+  "homepage": "https://github.com/cherifa2446/PANENKA#readme",
+  "dependencies": {
+    "sharp": "^0.35.4"
+  }
+}

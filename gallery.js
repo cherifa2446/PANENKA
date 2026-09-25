@@ -42,6 +42,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
+  function getPreviewPath(imagePath) {
+  if (!imagePath) return "";
+
+  return imagePath
+    .replace("/images/uploads/", "/images/previews/")
+    .replace(/\.(jpg|jpeg|png|webp)$/i, ".webp");
+}
 
   /* =========================
      AFFICHAGE DES ALBUMS
@@ -92,7 +99,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           <div class="album-cover">
 
             <img
-              src="${album.cover || ""}"
+              src="${getPreviewPath(album.cover)}"
               alt="${album.title || "Album Panenka"}"
               loading="lazy"
             >

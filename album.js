@@ -114,6 +114,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   }
 
+  function getPreviewPath(imagePath) {
+  if (!imagePath) return "";
+
+  return imagePath
+    .replace("/images/uploads/", "/images/previews/")
+    .replace(/\.(jpg|jpeg|png|webp)$/i, ".webp");
+}
 
   /* =============================
      AFFICHER LES PHOTOS
@@ -150,7 +157,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     const image =
-      photo.image || "";
+     getPreviewPath(photo.image);
 
 
     const alt =
